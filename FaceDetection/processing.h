@@ -10,8 +10,10 @@
 #include <opencv2/imgproc.hpp>
 #include <opencv2/objdetect.hpp>
 #include <opencv2/core/types.hpp>
+#include "opencv2/videoio.hpp"
+
 
 void detectAndMark( cv::Mat& img, cv::CascadeClassifier& cascade,
-                    cv::CascadeClassifier& nestedCascade);
+                    cv::CascadeClassifier& nestedCascade, cv::VideoWriter &output);
 
 #endif //OPENCV_PROCESSING_H

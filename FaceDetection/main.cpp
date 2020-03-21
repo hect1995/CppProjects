@@ -1,9 +1,11 @@
 #include <iostream>
+#include "opencv2/opencv.hpp"
 #include "opencv2/objdetect.hpp"
 #include "opencv2/highgui.hpp"
 #include "opencv2/imgproc.hpp"
 #include "opencv2/videoio.hpp"
 #include "processing.h"
+
 
 using namespace cv;
 
@@ -31,6 +33,13 @@ int main( int argc, const char** argv )
     VideoCapture capture;
     //-- 2. Read the video stream through the default camera
     capture.open(0);
+    int frame_width= capture.get(CAP_PROP_FRAME_WIDTH);
+    int frame_height= capture.get(CAP_PROP_FRAME_HEIGHT);
+    Size frameSize(static_cast<int>(frame_width), static_cast<int>(frame_height));
+    int codec = cv::VideoWriter::fourcc('M', 'J', 'P', 'G');
+
+    VideoWriter output_video("result.avi", codec, 10, Size(frame_width, frame_height), true);
+
     if ( ! capture.isOpened() )
     {
         std::cout << "--(!)Error opening video capture\n";
@@ -45,7 +54,7 @@ int main( int argc, const char** argv )
             break;
         }
         //-- 3. Apply the classifier to the frame
-        detectAndMark( frame, face_cascade,eyes_cascade);
+        detectAndMark( frame, face_cascade,eyes_cascade,output_video);
         if( waitKey(10) == 27 )
         {
             break; // escape

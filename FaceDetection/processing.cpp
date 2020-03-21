@@ -7,7 +7,7 @@
 using namespace cv;
 
 void detectAndMark( cv::Mat& img, cv::CascadeClassifier& cascade,
-                    cv::CascadeClassifier& nestedCascade)
+                    cv::CascadeClassifier& nestedCascade, cv::VideoWriter &output)
 {
     Mat frame_gray;
     cvtColor( img, frame_gray, COLOR_BGR2GRAY );
@@ -32,4 +32,6 @@ void detectAndMark( cv::Mat& img, cv::CascadeClassifier& cascade,
     }
     //-- Show what you got
     imshow( "Capture - Face detection", img );
+    // Save
+    output.write(img);
 }
