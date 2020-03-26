@@ -19,6 +19,9 @@ img_align_celeba.zip).
 
 Some examples of the generated images after being trained for 5 epochs (I just have a CPU) are:
 
-![alt text](image0.jpg) ![alt text](images/image1.jpg) ![alt text](images/image2.jpg) ![alt text](images/image3.jpg)![alt text](images/image4.jpg)  
+![alt text](images/image0.jpg) ![alt text](images/image1.jpg) ![alt text](images/image2.jpg) ![alt text](images/image3.jpg)![alt text](images/image4.jpg)
+![alt text](images/image5.jpg)![alt text](images/image6.jpg)![alt text](images/image7.jpg)![alt text](images/image8.jpg)
+![alt text](images/image9.jpg)![alt text](images/image10.jpg)![alt text](images/image11.jpg)![alt text](images/image12.jpg)
+![alt text](images/image13.jpg)![alt text](images/image14.jpg)            
 
 
