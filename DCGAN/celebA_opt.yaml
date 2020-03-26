@@ -1,0 +1,22 @@
+dataset:
+  path: ../FaceGeneration/dataset
+  img_size: 64
+  n_channels: 3
+model:
+  load: true
+optimizer:
+  initial_lr: 0.0002
+  beta: 0.5
+train:
+  seed: 999
+  script_path: dcgan.py
+  batch_size: 128
+  workers: 2
+  epochs: 10
+  size_input: 100 # Size of the input noise
+  n_gpu: 0 # Number of GPUs
+  period_check: 500
+evaluate:
+  batch_size: 1000
+  augmentation_factor: 32
+  num_samples: 64
